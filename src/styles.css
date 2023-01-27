@@ -20,20 +20,20 @@ html {
 
 section {
     height: 100vh;
-    background-color: #B0AD74;
+    background-color: #E2EBE1;
 }
 
 .hero {
-    background-image: linear-gradient(to bottom,#03151C 85%, #5289A1);
+    background-image: linear-gradient(to bottom,#031201 90%, #E2EBE1);
     height: 100vh;
     font-size: 2rem;
-    color: #FFD4DB;
+    color: #B3ABFF;
 }
 
 footer{
     height: 50vh;
-    background-color: #03151C ;
-    color: #FFD4DB;
+    background-color: #031201 ;
+    color: #B3ABFF;
     text-align: center;
     padding: 6rem;
 }
@@ -72,15 +72,15 @@ li {
 
 a {
     text-decoration: none;
-    color: #03151C;
+    color: #031201;
 }
 
 li a {
-    color: #B0AD74;
+    color: #E2EBE1;
 }
 
 li a:hover {
-    color: #FFD4DB;
+    color: #B3ABFF;
 }
 
 h1 {
@@ -99,10 +99,11 @@ h3{
 }
 
 .subtext {
-    font-size: 1rem;
+    font-size: 2rem;
     font-weight: 200;
     height: fit-content;
 }
+
 
 .hero-text p {
     font-size: 2rem;
@@ -136,15 +137,15 @@ h3{
     width: 15rem;
     height: 3rem;
     background-color: #5289A1;
-    color:  #03151C;
-    border: solid #B0AD74 0.15rem;
+    color:  #031201;
+    border: solid #E2EBE1 0.15rem;
     border-radius: 2rem;
     text-align: center;
     font-size: 2.2rem;
 }
 
 .button:hover {
-    background-color: #03151C ;
+    background-color: #031201 ;
     cursor: pointer;
     color: #FFD4DC;
     font-weight: 400;
@@ -202,17 +203,24 @@ h3{
 .project-card {
     width: 25rem;
     height: 50rem;
-    box-shadow: #403E16 0.3rem 0.6rem 1rem;
+    box-shadow: #031d0e 0.3rem 0.6rem 1rem;
     text-align: center;
     padding: 2rem;
     align-items: center;
+    justify-content: flex-start;
     margin: 1rem;
+    display: flex;
+    flex-direction: column;
 }
 
 .projects-container{
     margin-top: 1.5rem;
     display: flex;
     justify-content: space-around;
+}
+
+a.subtext:hover{
+    color: #5289A1;
 }
 
 @media only screen and (max-width: 600px) {
@@ -235,14 +243,14 @@ h3{
 }
 
 hr {
-    border-color: #03151C;
+    border-color: #031201;
+    width: 85%;
 }
 
 .project-image {
     margin-top: 2.5rem;
     max-width: 21rem;
-    border-radius: 100%;
-    width: 100%;
+    width: 65%;
 }
 
 .hamburguer {
@@ -267,7 +275,7 @@ hr {
 
     ul {
         display: none;
-        background-color: #03151C;
+        background-color: #031201;
         margin: 0;
     }
 
@@ -283,7 +291,7 @@ hr {
         align-items: flex-start;
         display: flex;
         flex-direction: column-reverse;
-        background-color: #03151C;
+        background-color: #031201;
     }
 
     .hero-logo {
