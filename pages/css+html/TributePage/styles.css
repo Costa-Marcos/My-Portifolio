@@ -1,0 +1,54 @@
+html {
+    background-color: #f1ea9c;
+    margin: 0;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 18px;
+}
+
+body {
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+#main {
+    align-self: center;
+    width: 100vw;
+}
+
+#img-div{
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 15px;
+}
+
+#image {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    
+}
+
+#title {
+    text-align: center;
+}
+
+li{
+    margin-bottom: 10px;
+}
+
+p{
+    text-align: justify;
+}
+
+cite{
+    text-align: left;
+}
+
+ #footer-text{
+    text-align: center;
+    height: 3rem;
+}
