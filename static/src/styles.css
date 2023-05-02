@@ -1,0 +1,315 @@
+*, *::before, *::after {
+    box-sizing: border-box;   
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font: inherit;
+}
+
+img, picture, svg, video{
+    display: block;
+    max-width: 100%;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: "Open-Sans", sans-serif;
+}
+
+section {
+    height: 100vh;
+    background-color: #fff;
+}
+
+.hero {
+    background-image: linear-gradient(to bottom,#000 90%, #fff);
+    height: 100vh;
+    font-size: 2rem;
+    color: #afaeb9;
+}
+
+footer{
+    height: 50vh;
+    background-color: #000 ;
+    color: #afaeb9;
+    text-align: center;
+    padding: 6rem;
+}
+
+footer p{
+    margin-top: 1rem;
+    font-size: 2rem;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.5rem;
+}
+
+ul {
+    display: flex;
+    list-style-type: none;
+    justify-content: space-around;
+    width: 50rem;
+    font-size: 1.8rem;
+}
+
+ul.show {
+    display: block;
+    list-style-type: none;
+    justify-content: space-around;
+    width: 50rem;
+    font-size: 1.8rem;
+}
+
+li {
+    text-decoration: none;
+    font-size: 2.5rem;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+li a {
+    color: #fff;
+}
+
+li a:hover {
+    color: #afaeb9;
+}
+
+h1 {
+    font-size: 5rem;
+    font-weight: 600;
+}
+
+h2{
+    font-size: 4.5rem;
+    font-weight: 500;
+}
+
+h4{
+    font-size: 2.2rem;
+    font-weight: 300;
+}
+
+p{
+    font-size: 1.7rem;
+    font-weight: 300;
+}
+
+.subtext {
+    font-size: 1.7rem;
+    font-weight: 200;
+    height: fit-content;
+}
+
+
+.hero-text p {
+    font-size: 1.8rem;
+    font-weight: 400;
+}
+
+.information p{
+    font-size: 1.7rem;
+    font-weight: 300;
+    text-align: justify;
+}
+
+.hero-area{
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hero-text{
+    margin-top: 3rem;
+    justify-content: space-evenly;
+    margin-left: 5rem;
+}
+
+.hero-text div, h1, p {
+    margin-bottom: 1.2rem;
+}
+
+.button {
+    width: 15rem;
+    height: 4rem;
+    background-color: #afaeb9;
+    color:  #000;
+    border: solid #fff 0.4rem;
+    border-radius: 0.8rem;
+    padding-top: 0.4rem;
+    text-align: center;
+    font-size: 2.2rem;
+}
+
+.button:hover {
+    background-color: #000 ;
+    cursor: pointer;
+    color: #fff;
+    font-weight: 400;
+}
+
+.button a:hover{
+    color: #fff;
+}
+
+.hero-logo {
+    max-height: 10rem;
+    border-radius: 100%;
+    height: 7.5rem;
+    width: 7.5rem;
+    margin: 0.5rem 3rem;
+}
+
+.social {
+    margin: 2rem;
+}
+
+.social svg{
+    width: 3rem;
+    height: 3rem;
+}
+
+.sub-section-style1 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 8rem;
+    align-items: center;
+}
+
+
+.sub-section-style2 {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 8rem;
+    height: fit-content;
+}
+
+
+.headshot {
+    width: 20rem;
+    border-radius: 0.4rem;
+    box-shadow: 0.4rem 0.5rem 0.5rem #51585b;
+}
+
+.headshot-container {
+    display: flex;
+    align-items: center;
+    margin: 2rem;
+}
+
+.project-card {
+    width: 25rem;
+    height: 25rem;
+    box-shadow: #031d0e 0.3rem 0.6rem 1rem;
+    text-align: center;
+    padding: 2rem;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.projects-container{
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: space-around;
+}
+
+.window-txt{
+    width: 0;
+    height: 0;
+    visibility: hidden;
+}
+
+a.subtext:hover{
+    color: #51585b;
+}
+
+@media only screen and (max-width: 600px) {
+
+    .projects-container{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+}
+
+@media only screen and (max-width: 600px) {
+
+    .sub-section-style1 {
+        height: fit-content;
+    }
+    .headshot{
+        width: 15rem;
+    }
+}
+
+hr {
+    border-color: #000;
+    width: 85%;
+}
+
+.project-image {
+    margin-top: 2.5rem;
+    max-width: 21rem;
+    width: 65%;
+}
+
+.hamburguer {
+    display: none;
+}
+
+.hamburguer:focus{
+    outline: 0;
+}
+
+@media only screen and (max-width: 600px) {
+
+    .hamburguer {
+        margin: 2rem;
+        border: 0;
+        background-color: transparent;
+        color: #fff;
+        font-size: 3rem;
+        display: block;
+        align-self: flex-end;
+    }
+
+    ul {
+        display: none;
+        background-color: #000;
+        margin: 0;
+    }
+
+    ul.show {
+        display: block;
+    }
+
+    li{
+        margin-bottom: 1.5rem;
+    }
+
+    nav {
+        align-items: flex-start;
+        display: flex;
+        flex-direction: column-reverse;
+        background-color: #000;
+    }
+
+    .hero-logo {
+        display: none;
+    }
+    
+}

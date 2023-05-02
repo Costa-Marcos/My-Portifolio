@@ -1,0 +1,50 @@
+html{
+    font-size: 62.5%;
+    margin: 0;
+    font-family: "Open-Sans", sans-serif;
+}
+
+body{
+    margin: 0;
+}
+
+header {
+    background-color: #5558e33d;
+    font-size: 4rem;
+    text-align: center;
+    width: 100vw;
+    height: auto;
+}
+
+main {
+    margin: 0 3rem;
+}
+
+ul{
+    list-style-type: none;
+    
+}
+
+li{
+    font-size: 2.5rem;
+    margin: 3rem auto 0;
+    background-color: #0f022e;
+    text-decoration: none;
+    text-align: center;
+    width: 40vw;
+    height: auto;
+    border-radius: 5%;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+li:hover {
+    background-color: #5558e33d;
+}
+
+a:hover{
+    color: #0f022e;
+}
