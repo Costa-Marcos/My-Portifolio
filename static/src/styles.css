@@ -31,7 +31,7 @@ section {
 }
 
 footer{
-    height: 50vh;
+    height: fit-content;
     background-color: #000 ;
     color: #afaeb9;
     text-align: center;
@@ -119,6 +119,7 @@ p{
 }
 
 .information p{
+    width: 65vw;
     font-size: 1.7rem;
     font-weight: 300;
     text-align: justify;
@@ -129,6 +130,103 @@ p{
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+#backgroundImg{
+    position: absolute;
+    left: 0;
+    top: 9.5rem;
+    opacity: 15%;
+    z-index: 100;
+    animation: opacityChange 30s ease-in-out infinite alternate;
+}
+
+@keyframes opacityChange {
+  0% {
+    opacity: 0.05;
+  }
+  100% {
+    opacity: 0.25;
+  }
+}
+
+#falling-star {
+    position: absolute;
+    background-color: #ecebeb;
+    top: 15rem;
+    left: 0;
+    width: 0.2rem;
+    height: 0.2rem;
+    border-radius: 100%;
+    animation-name: star-falling;
+    animation-duration: 3s;
+    animation-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+}
+  
+@keyframes star-falling {
+    0% {
+        transform: translateX(0);
+        filter: brightness(0%);
+        background-color: #000;
+    }
+    1%{
+        background-color: #ecebeb;
+        transform: translateX(0);
+        filter: brightness(100%);
+        opacity: 1;
+    }
+    50% {
+        transform: translateX(calc(100vw - 0.2rem));
+        top: 25rem;
+        filter: brightness(90%);
+    }
+    100%{
+        opacity: 0;
+        background-color: #5e5d5d;
+    }
+
+}
+
+#star-1{
+    width: 0.5rem;
+    height: auto;
+    position: absolute;
+    left: 85vw;
+    top: 30rem;
+    animation: bright-star 5s infinite alternate-reverse;
+}
+
+
+#star-2{
+    width: 0.6rem;
+    height:auto;
+    position: absolute;
+    left: 75vw;
+    top: 40rem;
+    animation: bright-star 3s infinite alternate-reverse;
+}
+
+#star-3{
+    width: 0.6rem;
+    height:auto;
+    position: absolute;
+    left: 63vw;
+    top: 52rem;
+    animation: bright-star 1s cubic-bezier(0.39, 0.575, 0.565, 1) infinite alternate;
+}
+
+@keyframes bright-star {
+    0%{
+        filter: brightness(50%);
+    }
+    50%{
+        filter: brightness(100%);
+    }
+    100%{
+        filter: brightness(70%);
+    }
 }
 
 .hero-text{
@@ -183,7 +281,7 @@ p{
 
 .sub-section-style1 {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     justify-content: space-around;
     padding: 8rem;
     align-items: center;
@@ -197,6 +295,7 @@ p{
     padding: 8rem;
     height: fit-content;
 }
+
 
 
 .headshot {
