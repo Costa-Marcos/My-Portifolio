@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" class="overflow-x-hidden">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,122 +8,155 @@
     <link rel="stylesheet" href="src/styles.css">
     <style> @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&display=swap'); </style>
     <script src="https://kit.fontawesome.com/a2f90396aa.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 </head>
-<body>
-
-    <section class="hero" id="main">
-        <nav>
-            <img class="hero-logo" src="./src/images/Logo.png" alt="Marcos Costa logo">
-            <ul id="nav-list">
-                <li><a href="#about-me">Sobre mim</a></li>
-                <li><a href="#projects">Projetos</a></li>
-                <li><a href="#contact-me">Contato</a></li>
-            </ul>
-            <button id="hamburguer" class="hamburguer">
-                <i class="fa-solid fa-bars"></i>
-            </button>
-        </nav>
-        <div class="hero-area">
-            <div class="hero-text">
-                <h1>Marcos Costa</h1>
-                <div>
-                    <p>Desenvolvedor Front-end</p>
+<body class="m-0 p-0">
+    <section class="container-fluid text-bg-dark px-0" id="main">    
+        <nav class="text-dark bg-white navbar fixed-top navbar-expand-md">
+            <div class="container-fluid">
+                <div class="navbar-brand"><img src="./src/images/Logo.png" class="rounded-circle" alt="Logotipo do desenvolvedor front-end Marcos Costa" width="50" height="50"></div>
+                <button class="navbar-toggler me-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class='navbar-nav ms-auto mb-2 mb-lg-0 text-end'>
+                        <li class="list-inline-item nav-item"><a class="hover-underline-animation nav-link active fs-5 me-3" aria-current="page" href="#about-me">Sobre mim</a></li>
+                        <li class="list-inline-item nav-item"><a class="hover-underline-animation nav-link active fs-5 me-3" href="#projects">Projetos</a></li>
+                        <li class="list-inline-item nav-item"><a class="hover-underline-animation nav-link active fs-5 me-4" href="#contact-me">Contato</a></li>
+                    </ul>
                 </div>
-                <div>
+            </div>
+        </nav>
+        <div class="container-fluid px-0 mt-5" id="hero-area">
+            <div class="card border-dark">
+                <div class="card-img-overlay text-white pt-0 ps-3 ps-md-5 pt-md-5 d-flex flex-column justify-content-center" style="color:#fff">
+                    <h1 class="display-1 card-title">Marcos Costa</h1>
+                    <p id="subtitle" class="fs-1 card-subtitle">Desenvolvedor Front-end</p>
+                </div>
+                <div class="card-img">
                     <div id="falling-star"></div>
                     <img src="./src/images/star.png" id="star-1" alt="Representação de uma estrela">
                     <img src="./src/images/star.png" id="star-2" alt="Representação de uma estrela">
                     <img src="./src/images/star.png" id="star-3" alt="Representação de uma estrela">
-                    <img src="./src/images/imgBackgroundMyPortifolio.png" id="backgroundImg" alt="Imagem de fundo do portifólio retratando o céu noturno.">
+                    <img src="./src/images/imgBackgroundMyPortifolio.jpg" id="backgroundImg" alt="Imagem de fundo do portifólio retratando o céu noturno.">
+                </div>
+                <div class="card-img position-absolute top-50 end-0 ms-auto d-flex flex-row-reverse translate-middle-y z-3">
+                    <div class="d-flex flex-column me-3">
+                        <a href="https://github.com/Costa-Marcos" target="_blank" style="font-size: 0;">
+                        Github
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="#ffffff" width="50" height="50" viewBox="0 0 24 24">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.linkedin.com/in/marcos-vin%C3%ADcius-pereira-da-costa-253297161/" target="_blank" style="font-size: 0;" class="mt-4">
+                        Linkedin
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="#ffffff" width="50" height="50" viewBox="0 0 24 24">
+                                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                            </svg>
+                        </a>
+                    </div>
                 </div>
             </div>
-            <div class="socials">
-                <div><a class="social" href="https://github.com/Costa-Marcos" target="_blank">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="#ffffff" width="24" height="24" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                </a></div>
-                <div><a class="social" href="https://www.linkedin.com/in/marcos-vin%C3%ADcius-pereira-da-costa-253297161/" target="_blank">
-                    <svg xmlns="http://www.w3.org/2000/svg"  fill="#ffffff" width="24" height="24" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-                </a></div>
+        </div>
+    </section>
+    <section class="container-fluid text-bg-light py-5" id="about-me">
+        <h2 class="text-center fs-1">Sobre mim</h2>
+        <div class="card w-75 mx-auto border-light text-bg-light shadow p-3 mb-5 bg-body-tertiary rounded mt-5">
+            <div class="row g-0">
+              <div class="col-md-3">
+                <img class="img-fluid rounded-start" height="auto" src="./src/images/HeadShot.jpeg" alt="Foto de perfil do desenvolvedor front-end Marcos Costa.">
+              </div>
+              <div class="col-md-9">
+                <div class="card-body my-auto fs-5">
+                    <p class="card-text"> 
+                        Olá, me chamo Marcos. Sou engenheiro químico de formação mas atuo como desenvolvedor front-end desde 2022.  Sou apaixonado por criar interfaces web dinâmicas e intuitivas, e estou constantemente aprendendo e aprimorando minhas habilidades.
+                    </p>
+                    <button class="btn btn-secondary rounded-pill d-block d-sm-none mx-auto my-3" type="button" data-bs-toggle="collapse" data-bs-target="#cardText" aria-expanded="false" aria-controls="cardText">
+                        <p class="my-0">Mais</p>
+                    </button>
+                    <p class="card-text collapse d-sm-block" id="cardText">
+                        Tenho um olhar criativo para transformar conceitos em interfaces funcionais e comprometimento em entregar projetos responsivos que atendam às necessidades dos usuários. Possuo experiência em trabalhar com projetos em HTML 5, CSS, JavaScript, Bootstrap, React, Redux, NodeJS dentro outras tecnologias.
+                    </p>
+                </div>
+              </div>
+            </div>
+          </div>
+    </section>
+    <section class="container-fluid text-bg-light py-5" id="projects">
+        <h2 class="text-center fs-1">Projetos</h2>
+        <div class="row mt-5 py-5">
+            <div class="row w-95 mx-auto d-flex flex-md-nowrap">    
+                <div class="carret col-1 my-auto d-none d-md-block">
+                    <svg class="" xmlns="http://www.w3.org/2000/svg" width="177px" height="177px" viewBox="0 0 20 20" fill="#000000" transform="matrix(-1, 0, 0, 1, 0, 0)">
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"/>            
+                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>            
+                        <g id="SVGRepo_iconCarrier"> <path fill="#383838" fill-rule="evenodd" d="M4.99997298,2.64282227 L4.99997298,17.4082642 C5.09237787,17.7285055 5.29866028,17.9191895 5.61882019,17.9803162 C5.9389801,18.0414429 6.25233968,17.9564514 6.55889893,17.7253418 L14.6656665,10.7321242 C14.8885375,10.5329849 14.999973,10.2889901 14.999973,10.0001397 C14.999973,9.71128923 14.8885375,9.46773884 14.6656665,9.26948848 C11.7588863,6.76244709 9.06373939,4.43805189 6.58022575,2.29630288 C6.3482666,2.09913635 5.94128418,1.91293335 5.51852417,2.04302979 C5.23668416,2.12976074 5.06383377,2.32969157 4.99997298,2.64282227 Z"/> </g>            
+                    </svg>
+                </div>
+                <div class="card text-bg-secondary text-center mb-3 mx-auto col-11 col-md-3">
+                    <div class="card-header fs-5">Homepage Dr. Antonio Barone</div>
+                    <div class="card-body d-flex flex-column">
+                        <p class="card-text">Site responsivo para celular, tablet e desktop criado utilizando HTML5, CSS e JavaScript.</p>
+                        <img class ="card-img my-3" src="./src/images/homepageDrAntonio.png" alt="Imagem do projeto Homepage Dr. Antonio Barone">
+                        <a class="link-light mb-2" href="https://drantoniobarone.com.br/" target="_blank">Acesse Aqui</a>
+                        <p class="mt-2 text-white-body-secondary">HTML 5, CSS e JS.</p>
+                    </div>
+                </div>
+                <div class="card text-bg-info text-center mb-3 mx-auto col-11 col-md-3">
+                    <div class="card-header fs-5">Máquina geradora de citações</div>
+                    <div class="card-body d-flex flex-column">
+                        <p class="card-text">Aplicativo para a geração e compartilhamento de citações personallidades históricas.</p>
+                        <img class ="card-img my-3" src="./src/images/randomQuoteMachine.PNG" alt="Imagem do projeto Aplicativo para a geração e compartilhamento de citações personallidades históricas..">
+                        <a class="link-dark mb-2" href="./pages/randomQuoteMachine/index.html" target="_blank">Acesse Aqui</a>
+                        <p class="mt-2 text-white-body-secondary">React</p>
+                    </div>
+                </div>
+                <div class="card text-bg-info text-center mb-3 mx-auto col-11 col-md-3">
+                    <div class="card-header fs-5">Visualizador de Linguagem de Marcação</div>
+                    <div class="card-body d-flex flex-column">
+                        <p class="card-text">Aplicativo para pré-visualização de linguagem de marcação.</p>
+                        <img class ="card-img my-3" src="./src/images/markdownPreview.png" alt="Imagem do projeto Visualizador de Linguagem de Marcação">
+                        <a class="link-dark mb-2" href="./pages/MarkdownPreviwer/index.html" target="_blank">Acesse Aqui</a>
+                        <p class="mt-2 text-white-body-secondary">React</p>
+                    </div>
+                </div>
+                <div class="carret col-1 my-auto d-none d-md-block">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="177px" height="177px" viewBox="0 0 20 20" fill="#000000">
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"/>                
+                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>                
+                        <g id="SVGRepo_iconCarrier"> <path fill="#383838" fill-rule="evenodd" d="M4.99997298,2.64282227 L4.99997298,17.4082642 C5.09237787,17.7285055 5.29866028,17.9191895 5.61882019,17.9803162 C5.9389801,18.0414429 6.25233968,17.9564514 6.55889893,17.7253418 L14.6656665,10.7321242 C14.8885375,10.5329849 14.999973,10.2889901 14.999973,10.0001397 C14.999973,9.71128923 14.8885375,9.46773884 14.6656665,9.26948848 C11.7588863,6.76244709 9.06373939,4.43805189 6.58022575,2.29630288 C6.3482666,2.09913635 5.94128418,1.91293335 5.51852417,2.04302979 C5.23668416,2.12976074 5.06383377,2.32969157 4.99997298,2.64282227 Z"/> </g>                
+                    </svg>
+                </div>
             </div>
         </div>
     </section>
-    <section class="sub-section-style1" id="about-me">
-        <div class="information">
-            <h2>Sobre mim</h2>
-            <p>
-                Sou engenheiro químico e atuei na área administrativa e financeira. Com experiência no planejamento e execução de projetos, gestão financeira e administrativa. Atualmente sou desenvolvedor front-end.
-            </p>
-            <p>
-                Sempre curioso e muito interessado em tecnologia, encontrei no desenvolvimento web o meu caminho profissional. Considero como minha maior qualidade meu raciocínio lógico, que me permite desenvolver soluções de maneira eficiente e criativa.
-            </p>
-            <div>
-                
-            </div>
-        </div>
-        <div class="headshot-container">
-            <img class="headshot" src="./src/images/HeadShot.jpeg" alt="Marcos Costa foto de perfil.">
-        </div>
-    </section>
-    <section class="sub-section-style2" id="projects">
-        <h2>Projetos</h2>
-        <div class="projects-container">
-            <div class="project-card">
-                <img class ="project-image" src="./src/images/homepageDrAntonio.png" alt="Imagem do projeto 1">
-                <h4>Dr. Antonio Barone</h4>
-                <br>
-                <br>
-                <p class="subtext window-txt">Página pessoal feita para divulgação.</p>
-                <hr>
-                <a class="subtext" href="https://drantoniobarone.com.br/" target="_blank">Acesse Aqui</a>
-            </div>
-            <div class="project-card">
-                <img class ="project-image" src="./src/images/randomQuoteMachine.PNG" alt="Imagem do projeto 2.">
-                <h4>Máquina geradora de citações</h4>
-                <p class="subtext window-txt">Projeto feito em React, para a geração e compartilhamento de citações personagens históricos</p>
-                <hr>
-                <a class="subtext" href="./pages/randomQuoteMachine/index.html" target="_blank
-                ">Acesse Aqui</a>
-            </div>
-            <div class="project-card">
-                <img class ="project-image" src="./src/images/markdownPreview.png" alt="Imagem do projeto 3.">
-                <h4>Visualizador de Linguagem de Marcação</h4>
-                <p class="subtext window-txt">Aplicativo para pré-visualização de linguagem de marcação feito em React</p>
-                <hr>
-                <a class="subtext" href="./pages/MarkdownPreviwer/index.html" target="_blank">Acesse Aqui</a>
-            </div>
-            <div class="project-card">
-                <img class ="project-image" src="" alt="Imagem do projeto 4.">
-                <h4>Página de Tributo</h4>
-                <p class="subtext window-txt">Projeto feito em HTML5 e CSS</p>
-                <hr>
-                <a class="subtext" href="">Acesse Aqui</a>
-            </div>
-        </div>
-    </section>
-    <footer id="contact-me">
-        <h2>Contato</h2>
+    <section class="text-bg-dark text-center py-5" id="contact-me">
+        <h2 class="fs-1">Contato</h2>
         <div class="footer-socials">
-            <div class="line">
-                <p>Email:</p>
-                <p>mvpc@protonmail.ch</p>
+            <div class="row">
+                <p>Email: <a class="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover" href=""> mvpc@protonmail.ch</a></p>
             </div>
-            <div class="line">
-                <p>Linkedin:</p>
-                <div><a class="social" href="https://www.linkedin.com/in/marcos-vin%C3%ADcius-pereira-da-costa-253297161/" target="_blank">
-                    <svg xmlns="http://www.w3.org/2000/svg"  fill="#ffffff" width="24" height="24" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-                </a></div>
+            <div class="row">
+                    <a class="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover" href="https://www.linkedin.com/in/marcos-vin%C3%ADcius-pereira-da-costa-253297161/" target="_blank">Linkedin
+                        <svg class="mx-2" style="display: inline;" xmlns="http://www.w3.org/2000/svg"  fill="#ffffff" width="24" height="24" viewBox="0 0 24 24">
+                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                    </a>
             </div>
-            <div class="line">
-                <p>Github:</p>
-                <div><a class="social" href="https://github.com/Costa-Marcos" target="_blank">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="#ffffff" width="24" height="24" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                </a></div>
+            <div class="row">
+                <a href="https://github.com/Costa-Marcos" target="_blank" class="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Github
+                    <svg class="mx-2" style="display: inline;" xmlns="http://www.w3.org/2000/svg" fill="#ffffff" width="24" height="24" viewBox="0 0 24 24">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                </a>
             </div>
         </div>
-        <div>
+    </section>
+    <footer class="container-fluid text-bg-dark text-center pb-2">
+        <div class="pt-2">
             <p>Todos os direiros reservados &#169 2023</p>
         </div>
     </footer>
     <script src="src/app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 </body>
 </html>

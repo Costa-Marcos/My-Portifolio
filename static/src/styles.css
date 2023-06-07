@@ -1,3 +1,5 @@
+/* #region Main elements */
+
 *, *::before, *::after {
     box-sizing: border-box;   
 }
@@ -13,179 +15,61 @@ img, picture, svg, video{
     max-width: 100%;
 }
 
-html {
-    font-size: 62.5%;
-    font-family: "Open-Sans", sans-serif;
-}
+/* #endregion */
 
-section {
-    height: 100vh;
-    background-color: #fff;
-}
+/* #region #animations */
 
-.hero {
-    height: calc(100vw/(1.778) + 9.5rem);
-    background-image: linear-gradient(to bottom,#000 98%, #fff);
-    font-size: 2rem;
-    color: #fff;
-}
-
-footer{
-    height: fit-content;
-    background-color: #000 ;
-    color: #afaeb9;
-    text-align: center;
-    padding: 6rem;
-}
-
-footer p{
-    margin-top: 1rem;
-    font-size: 2rem;
-}
-
-nav {
-    display: flex;
-    justify-content: space-between;
-    padding-top: 2rem;
-}
-
-ul {
-    display: flex;
-    list-style-type: none;
-    justify-content: space-around;
-    width: 50rem;
-    font-size: 1.8rem;
-}
-
-ul.show {
-    display: block;
-    list-style-type: none;
-    justify-content: space-around;
-    width: 50rem;
-    font-size: 1.8rem;
-}
-
-li {
-    text-decoration: none;
-    font-size: 2.5rem;
-}
-
-a {
-    text-decoration: none;
-    color: #000;
-}
-
-li a {
-    color: #fff;
-}
-
-li a:hover {
-    color: #afaeb9;
-}
-
-h1 {
-    font-size: 5rem;
-    font-weight: 600;
-}
-
-h2{
-    font-size: 4.5rem;
-    font-weight: 500;
-    text-align: center;
-    margin-bottom: 3rem;
-}
-
-h4{
-    font-size: 2.2rem;
-    font-weight: 300;
-}
-
-p{
-    font-size: 1.7rem;
-    font-weight: 300;
-    line-height: 4rem;
-}
-
-
-.subtext {
-    font-size: 1.7rem;
-    font-weight: 200;
-    height: fit-content;
-}
-
-
-.hero-text p {
-    font-size: 1.8rem;
-    font-weight: 400;
-}
-
-.information p{
-    width: 65vw;
-    font-size: 1.7rem;
-    font-weight: 300;
-    text-align: justify;
-}
-
-.hero-area{
-    height: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-#backgroundImg{
-    width: 100vw;
-    height: auto;
-    position: absolute;
-    left: 0;
-    top: 9.5rem;
-    opacity: 15%;
-    z-index: 100;
-    animation: opacityChange 30s ease-in-out infinite alternate;
-}
-
-@keyframes opacityChange {
-  0% {
-    opacity: 0.15;
-  }
-  50%{
-    opacity: 0.3;
-  }
-  100% {
-    opacity: 0.05;
-  }
+@media(hover: hover){
+    .hover-underline-animation{
+        color: #031F29;
+        display: inline-block;
+        position: relative;
+    }    
+    .hover-underline-animation::after{
+        background-color: #031F29;
+        bottom: 0;
+        content: '';
+        height: 2px;
+        width: 100%;
+        left: 0;
+        position: absolute;
+        transform: scaleX(0);
+        transform-origin: bottom right;
+        transition: transform 0.25s ease-out;
+    }    
+    .hover-underline-animation:hover::after{
+        transform: scaleX(1);
+        transform-origin: bottom left;
+    }
 }
 
 #falling-star {
     position: absolute;
     background-color: #ecebeb;
-    top: 15rem;
-    left: 0;
-    width: 0.2rem;
-    height: 0.2rem;
+    width: 0.3rem;
+    height: 0.3rem;
     border-radius: 100%;
     animation-name: star-falling;
     animation-duration: 3s;
     animation-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
     animation-iteration-count: infinite;
     animation-direction: normal;
+    z-index: 999;
 }
   
 @keyframes star-falling {
     0% {
-        transform: translateX(0);
+        transform: translate(0, 15vh);
         filter: brightness(0%);
         background-color: #000;
     }
     1%{
         background-color: #ecebeb;
-        transform: translateX(0);
         filter: brightness(100%);
         opacity: 1;
     }
     50% {
-        transform: translateX(calc(100vw - 0.2rem));
-        top: 25rem;
+        transform: translate(99vw, 50vh);
         filter: brightness(90%);
     }
     100%{
@@ -196,31 +80,34 @@ p{
 }
 
 #star-1{
-    width: 0.3rem;
+    width: 0.6rem;
     height: auto;
     position: absolute;
-    left: 85vw;
-    top: 30rem;
-    animation: bright-star 5s infinite alternate-reverse;
+    top: 65%;
+    left: 68vw;
+    z-index: 999;
+    animation: bright-star 2.5s infinite alternate-reverse;
 }
 
 
 #star-2{
-    width: 0.4rem;
+    width: 0.45rem;
     height:auto;
     position: absolute;
-    left: 75vw;
-    top: 40rem;
+    top: 69%;
+    left: 64vw;
+    z-index: 999;
     animation: bright-star 3s infinite alternate-reverse;
 }
 
 #star-3{
-    width: 0.4rem;
+    width: 0.5rem;
     height:auto;
     position: absolute;
-    left: 63vw;
-    top: 52rem;
-    animation: bright-star 1s cubic-bezier(0.39, 0.575, 0.565, 1) infinite alternate;
+    top: 60%;
+    left: 72vw;
+    z-index: 999;
+    animation: bright-star 2s cubic-bezier(0.39, 0.575, 0.565, 1) infinite alternate;
 }
 
 @keyframes bright-star {
@@ -235,190 +122,59 @@ p{
     }
 }
 
-.hero-text{
-    margin-top: 3rem;
-    justify-content: space-evenly;
-    margin-left: 5rem;
+/* #endregion */
+
+/* #region navbar */
+
+.carret:hover{
+    cursor: pointer;
 }
+/* #endregion */
 
-.hero-text div, h1, p {
-    margin-bottom: 1.2rem;
-}
-
-.hero-logo {
-    max-height: 10rem;
-    border-radius: 100%;
-    height: 7.5rem;
-    width: 7.5rem;
-    margin-left: 3rem;
-}
-
-.social {
-    margin: 2rem;
-}
-
-.social svg{
-    width: 3rem;
-    height: 3rem;
-}
-
-.sub-section-style1 {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    padding: 8rem;
-    align-items: center;
-}
-
-
-.sub-section-style2 {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    padding: 8rem;
-    height: fit-content;
-}
-
-
-
-.headshot {
-    width: 20rem;
-    border-radius: 0.4rem;
-    box-shadow: 0.4rem 0.5rem 0.5rem #51585b;
-}
-
-.headshot-container {
-    display: flex;
-    align-items: center;
-    margin: 2rem;
-}
-
-.project-card {
-    width: 25rem;
-    height: 25rem;
-    box-shadow: #031d0e 0.3rem 0.6rem 1rem;
-    text-align: center;
-    padding: 2rem;
-    align-items: center;
-    justify-content: flex-start;
-    margin: 1rem;
-    display: flex;
-    flex-direction: column;
-}
-
-.projects-container{
-    margin-top: 1.5rem;
-    display: flex;
-    justify-content: space-around;
-}
-
-.window-txt{
-    width: 0;
-    height: 0;
-    visibility: hidden;
-}
-
-a.subtext:hover{
-    color: #51585b;
-}
-
-.footer-socials{
-    padding-top: 3rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.line{
-    display: flex;
-    flex-direction: row;
-    vertical-align: middle;
-    width: 100%;
-    justify-content: center;
-}
-
-.line *{
-    margin-left: 2rem;
-}
-
-
-@media only screen and (max-width: 600px) {
-
-    .projects-container{
-        display: flex;
-        flex-wrap: wrap;
-    }
-
-}
-
-@media only screen and (max-width: 600px) {
-
-    .sub-section-style1 {
+/* #region Media queries */
+@media only screen and (max-width: 576px) {
+    #main{
         height: fit-content;
     }
-    .headshot{
-        width: 15rem;
+    #hero-area{
+        position: relative;
+        padding-top: 1.25rem;
     }
-}
-
-hr {
-    border-color: #000;
-    width: 85%;
-}
-
-.project-image {
-    margin: 2rem 0;
-    max-width: 21rem;
-    width: 10rem;
-    height: 5.63rem;
-    border: #51585b;
-    border-radius: 0.2rem;
-    box-shadow: 0.3rem 0.3rem 0.2rem #51585b;
-}
-
-.hamburguer {
-    display: none;
-}
-
-.hamburguer:focus{
-    outline: 0;
-}
-
-@media only screen and (max-width: 600px) {
-
-    .hamburguer {
-        margin: 2rem;
-        border: 0;
-        background-color: transparent;
-        color: #fff;
-        font-size: 3rem;
-        display: block;
-        align-self: flex-end;
+    #subtitle{
+        width: 65vw;
+    }    
+    #main svg{
+        width: 1.875rem;
     }
-
-    ul {
-        display: none;
-        background-color: #000;
-        margin: 0;
+    #star-1{
+        width: 0.25rem;
     }
-
-    ul.show {
-        display: block;
+    #star-2{
+        width: 0.22rem;
     }
-
-    li{
-        margin-bottom: 1.5rem;
+    #star-3{
+        width: 0.2rem;
     }
-
-    nav {
-        align-items: flex-start;
-        display: flex;
-        flex-direction: column-reverse;
-        background-color: #000;
-    }
-
-    .hero-logo {
-        display: none;
-    }
+    @keyframes star-falling {
+        0% {
+            transform: translate(0, 5vh);
+            filter: brightness(0%);
+            background-color: #000;
+        }
+        1%{
+            background-color: #ecebeb;
+            filter: brightness(100%);
+            opacity: 1;
+        }
+        50% {
+            transform: translate(99vw, 10vh);
+            filter: brightness(90%);
+        }
+        100%{
+            opacity: 0;
+            background-color: #5e5d5d;
+        }
     
+    }
 }
+/* #endregion */
