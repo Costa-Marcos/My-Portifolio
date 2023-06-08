@@ -10,6 +10,7 @@
     <script src="https://kit.fontawesome.com/a2f90396aa.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body class="m-0 p-0">
     <section class="container-fluid text-bg-dark px-0" id="main">    
@@ -72,8 +73,8 @@
                     <p class="card-text"> 
                         Olá, me chamo Marcos. Sou engenheiro químico de formação mas atuo como desenvolvedor front-end desde 2022.  Sou apaixonado por criar interfaces web dinâmicas e intuitivas, e estou constantemente aprendendo e aprimorando minhas habilidades.
                     </p>
-                    <button class="btn btn-secondary rounded-pill d-block d-sm-none mx-auto my-3" type="button" data-bs-toggle="collapse" data-bs-target="#cardText" aria-expanded="false" aria-controls="cardText">
-                        <p class="my-0">Mais</p>
+                    <button id="btnShowMore" class="btn btn-secondary rounded-pill d-block d-sm-none mx-auto my-3" type="button" data-bs-toggle="collapse" data-bs-target="#cardText" aria-expanded="false" aria-controls="cardText">
+                        <p class="my-0">Mais <i class="fa-solid fa-chevron-down" style="color: #ffffff;"></i></p>
                     </button>
                     <p class="card-text collapse d-sm-block" id="cardText">
                         Tenho um olhar criativo para transformar conceitos em interfaces funcionais e comprometimento em entregar projetos responsivos que atendam às necessidades dos usuários. Possuo experiência em trabalhar com projetos em HTML 5, CSS, JavaScript, Bootstrap, React, Redux, NodeJS dentro outras tecnologias.
@@ -94,17 +95,17 @@
                         <g id="SVGRepo_iconCarrier"> <path fill="#383838" fill-rule="evenodd" d="M4.99997298,2.64282227 L4.99997298,17.4082642 C5.09237787,17.7285055 5.29866028,17.9191895 5.61882019,17.9803162 C5.9389801,18.0414429 6.25233968,17.9564514 6.55889893,17.7253418 L14.6656665,10.7321242 C14.8885375,10.5329849 14.999973,10.2889901 14.999973,10.0001397 C14.999973,9.71128923 14.8885375,9.46773884 14.6656665,9.26948848 C11.7588863,6.76244709 9.06373939,4.43805189 6.58022575,2.29630288 C6.3482666,2.09913635 5.94128418,1.91293335 5.51852417,2.04302979 C5.23668416,2.12976074 5.06383377,2.32969157 4.99997298,2.64282227 Z"/> </g>            
                     </svg>
                 </div>
-                <div class="card text-bg-secondary text-center mb-3 mx-auto col-11 col-md-3">
-                    <div class="card-header fs-5">Homepage Dr. Antonio Barone</div>
+                <div class="card text-bg-light text-center mb-3 mx-auto col-11 col-md-3 shadow p-3 mb-5 bg-body-tertiary rounded border border-dark-subtle">
+                    <div class="pt-3 fs-5">Homepage Dr. Antonio Barone</div>
                     <div class="card-body d-flex flex-column">
                         <p class="card-text">Site responsivo para celular, tablet e desktop criado utilizando HTML5, CSS e JavaScript.</p>
                         <img class ="card-img my-3" src="./src/images/homepageDrAntonio.png" alt="Imagem do projeto Homepage Dr. Antonio Barone">
-                        <a class="link-light mb-2" href="https://drantoniobarone.com.br/" target="_blank">Acesse Aqui</a>
+                        <a class="link-dark link-dark mb-2" href="https://drantoniobarone.com.br/" target="_blank">Acesse Aqui</a>
                         <p class="mt-2 text-white-body-secondary">HTML 5, CSS e JS.</p>
                     </div>
                 </div>
-                <div class="card text-bg-info text-center mb-3 mx-auto col-11 col-md-3">
-                    <div class="card-header fs-5">Máquina geradora de citações</div>
+                <div class="card text-bg-light text-center mb-3 mx-auto col-11 col-md-3 shadow p-3 mb-5 bg-body-tertiary rounded border border-dark-subtle">
+                    <div class="pt-3 fs-5">Máquina geradora de citações</div>
                     <div class="card-body d-flex flex-column">
                         <p class="card-text">Aplicativo para a geração e compartilhamento de citações personallidades históricas.</p>
                         <img class ="card-img my-3" src="./src/images/randomQuoteMachine.PNG" alt="Imagem do projeto Aplicativo para a geração e compartilhamento de citações personallidades históricas..">
@@ -112,8 +113,8 @@
                         <p class="mt-2 text-white-body-secondary">React</p>
                     </div>
                 </div>
-                <div class="card text-bg-info text-center mb-3 mx-auto col-11 col-md-3">
-                    <div class="card-header fs-5">Visualizador de Linguagem de Marcação</div>
+                <div class="card text-bg-light text-center mb-3 mx-auto col-11 col-md-3 shadow p-3 mb-5 bg-body-tertiary rounded border border-dark-subtle">
+                    <div class="pt-3 fs-5">Visualizador de Linguagem de Marcação</div>
                     <div class="card-body d-flex flex-column">
                         <p class="card-text">Aplicativo para pré-visualização de linguagem de marcação.</p>
                         <img class ="card-img my-3" src="./src/images/markdownPreview.png" alt="Imagem do projeto Visualizador de Linguagem de Marcação">
@@ -129,6 +130,9 @@
                     </svg>
                 </div>
             </div>
+        </div>
+        <div class="container-fluid">
+            <div class="d-flex justify-content-center"><button class="btn btn-light border-dark-subtle rounded-pill p-3"><a class="hover-underline-animation nav-link" href="./src/pages/projects.html" target="_blank">Ver todos os projetos</a></button></div>
         </div>
     </section>
     <section class="text-bg-dark text-center py-5" id="contact-me">
