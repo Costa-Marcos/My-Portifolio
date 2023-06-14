@@ -156,7 +156,7 @@ function App () {
                     </div>
                     <div className="col-12 my-3">
                         <p id="display" className=" rounded mx-auto col-3 bg-dark bg-gradient text-white">{innerTxt}</p>
-                        <p className="rounded mx-auto bg-dark bg-gradient text-white">{recording}</p>
+                        <p className="rounded mx-auto bg-dark col-6 bg-gradient text-white">{recording}</p>
                     </div>
                 </div>
             </div>

@@ -71,7 +71,7 @@ class App extends React.Component{
                 <h1 id="title">Markdown Previwer</h1>
                 <div className="side-by-side">
                     <div className="small-container">
-                        <h2 id="subtitle">Inside your markdown text here</h2>
+                        <h2 id="subtitle">Insert your markdown text here</h2>
                         <div>
                             <textarea id="editor" onChange={this.handleChange} value={this.state.text}></textarea>
                         </div>

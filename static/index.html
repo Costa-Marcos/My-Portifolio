@@ -11,7 +11,6 @@
     <script src="https://kit.fontawesome.com/a2f90396aa.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body class="m-0 p-0">
     <section class="container-fluid text-bg-dark px-0" id="main">    
@@ -87,8 +86,57 @@
     </section>
     <section class="container-fluid text-bg-light py-5" id="projects">
         <h2 class="text-center fs-1">Projetos</h2>
-        <div class="row mt-5 py-5">
-            <div class="row w-95 mx-auto d-flex flex-md-nowrap">    
+            <div id="carouselProjects" class="carousel carousel-dark slide my-4">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselProjects" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselProjects" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselProjects" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    <button type="button" data-bs-target="#carouselProjects" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="./src/images/Slide1.PNG" class="d-block w-100" alt="Imagem do projeto Homepage Dr. Antonio Barone">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Homepage Dr. Antonio Barone</h5>
+                            <p>Site responsivo para celular, tablet e desktop criado utilizando HTML5, CSS e JavaScript.</p>
+                            <a class="link-dark link-dark mb-2" href="https://drantoniobarone.com.br/" target="_blank">Acesse Aqui</a>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./src/images/Slide2.PNG" alt="Imagem do projeto Aplicativo para a geração e compartilhamento de citações personalidades históricas." class="d-block w-100" >
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Máquina geradora de citações</h5>
+                            <p>Aplicativo desenvolvido em React para a geração e compartilhamento de citações.</p>
+                            <a class="link-dark mb-2" href="./pages/randomQuoteMachine/index.html" target="_blank">Acesse Aqui</a>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./src/images/Slide3.PNG" alt="Imagem do projeto Visualizador de Linguagem de Marcação" class="d-block w-100">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Visualizador de Linguagem de Marcação</h5>
+                            <p>Aplicativo desenvolvido em React para pré-visualização de linguagem de marcação.</p>
+                            <a class="link-dark mb-2" href="./pages/MarkdownPreviwer/index.html" target="_blank">Acesse Aqui</a>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./src/images/Slide4.PNG" alt="Imagem do projeto Bateria Eletrônica" class="d-block w-100">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Bateria Eletrônica</h5>
+                            <p>Aplicativo desenvolvido em React simular uma bateria eletrônica.</p>
+                            <a class="link-dark mb-2" href="./pages/drumMachine/index.html" target="_blank">Acesse Aqui</a>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselProjects" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Próximo</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselProjects" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Anterior</span>
+                </button>
+            </div>
+            <!-- <div class="row w-95 mx-auto d-flex flex-md-nowrap">    
                 <div class="carret col-1 my-auto d-none d-md-block">
                     <svg class="" xmlns="http://www.w3.org/2000/svg" width="177px" height="177px" viewBox="0 0 20 20" fill="#000000" transform="matrix(-1, 0, 0, 1, 0, 0)">
                         <g id="SVGRepo_bgCarrier" stroke-width="0"/>            
@@ -123,6 +171,15 @@
                         <p class="mt-2 text-white-body-secondary">React</p>
                     </div>
                 </div>
+                <div class="invisible card text-bg-light text-center mb-3 mx-auto col-0 shadow p-3 mb-5 bg-body-tertiary rounded border border-dark-subtle">
+                    <div class="pt-3 fs-5">Bateria Eletrônica</div>
+                    <div class="card-body d-flex flex-column">
+                        <p class="card-text">Aplicativo para tocar sons, gravar notas e reproduzí-los na velocidade desejada.</p>
+                        <img class ="card-img my-3" src="./src/images/drumMachine.png" alt="Imagem do projeto Visualizador de Linguagem de Marcação">
+                        <a class="link-dark mb-2" href="./pages/drumMachine/index.html" target="_blank">Acesse Aqui</a>
+                        <p class="mt-2 text-white-body-secondary">React</p>
+                    </div>
+                </div>
                 <div class="carret col-1 my-auto d-none d-md-block">
                     <svg xmlns="http://www.w3.org/2000/svg" width="177px" height="177px" viewBox="0 0 20 20" fill="#000000">
                         <g id="SVGRepo_bgCarrier" stroke-width="0"/>                
@@ -130,8 +187,7 @@
                         <g id="SVGRepo_iconCarrier"> <path fill="#383838" fill-rule="evenodd" d="M4.99997298,2.64282227 L4.99997298,17.4082642 C5.09237787,17.7285055 5.29866028,17.9191895 5.61882019,17.9803162 C5.9389801,18.0414429 6.25233968,17.9564514 6.55889893,17.7253418 L14.6656665,10.7321242 C14.8885375,10.5329849 14.999973,10.2889901 14.999973,10.0001397 C14.999973,9.71128923 14.8885375,9.46773884 14.6656665,9.26948848 C11.7588863,6.76244709 9.06373939,4.43805189 6.58022575,2.29630288 C6.3482666,2.09913635 5.94128418,1.91293335 5.51852417,2.04302979 C5.23668416,2.12976074 5.06383377,2.32969157 4.99997298,2.64282227 Z"/> </g>                
                     </svg>
                 </div>
-            </div>
-        </div>
+            </div> -->
         <div class="container-fluid">
             <div class="d-flex justify-content-center"><button class="btn btn-light border-dark-subtle rounded-pill p-3"><a class="hover-underline-animation nav-link" href="./src/pages/projects.html" target="_blank">Ver todos os projetos</a></button></div>
         </div>

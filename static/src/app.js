@@ -15,3 +15,13 @@ btnShowMore.addEventListener('click', () => {
         btnShowMore.innerHTML = '<p class="my-0">Mais <i class="fa-solid fa-chevron-down" style="color: #ffffff;"></i></p>';
     }
 }, { passive: true });
+
+// document.addEventListener("DOMContentLoaded", function(event) {
+//     // Activate the carousel
+//     const myCarouselElement = document.querySelector('#myCarousel')
+
+//     const carousel = new bootstrap.Carousel(myCarouselElement, {
+//       interval: 2000,
+//       touch: false
+//     })
+// });
