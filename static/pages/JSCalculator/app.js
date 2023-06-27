@@ -86,7 +86,7 @@ function App (){
     return(
         <div className="container h-100">
             <div className="row">
-                <div className="container bg-secondary-subtle col-lg-4 col-md-5 col-sm-7 col-9 position-absolute top-50 start-50 translate-middle rounded border border-4 border-secondary">
+                <div className="container bg-secondary-subtle col-lg-3 col-md-5 col-sm-7 col-9 position-absolute top-50 start-50 translate-middle rounded border border-4 border-secondary">
                     <div className="my-3 text-dark">
                         <div className="border border-3 border-secondary d-flex flex-column">
                             <input id="displayExpression" className="bg-info-subtle border border-0 text-end px-2"
