@@ -6,7 +6,7 @@ function App (){
     const [displayTime, setDisplayTime] = React.useState(25*60);
     const [timerOn, setTimerOn] = React.useState(false);
     const [onBreak, setOnBreak] = React.useState(false);
-    const [beepSound] = React.useState(new Audio('./beepSound.mp3'))
+    const audioRef = React.useRef(null);
 
     const formatTime = (time, showSeconds) => {
 
@@ -16,21 +16,24 @@ function App (){
             return (( minutes < 10 ? minutes = '0' + minutes : minutes) + ':' +  (seconds < 10 ? seconds = '0' + seconds : seconds));
         }else{
             return minutes
-        }
-        
-
+        }      
     }
 
     const changeTimer = (amount, type) => {
-        if(type == 'break'){
-            if((breakTime + amount) > 0 && (breakTime + amount) < 3600){
-                setBreakTime((prev) => prev + amount);
-            }
-        }else if(type == 'session'){
-            if((sessionTime + amount) > 0 && (sessionTime + amount) < 3600){
-                setSessionTime((prev) => prev + amount);
-                if(!timerOn){
-                    setDisplayTime(sessionTime + amount)
+        if(!timerOn){
+            if(type == 'break'){
+                if((breakTime + amount) > 0 && (breakTime + amount) < 3660){
+                    setBreakTime((prev) => prev + amount);
+                    if(!timerOn){
+                        setDisplayTime(breakTime + amount)
+                    }
+                }
+            }else if(type == 'session'){
+                if((sessionTime + amount) > 0 && (sessionTime + amount) < 3660){
+                    setSessionTime((prev) => prev + amount);
+                    if(!timerOn){
+                        setDisplayTime(sessionTime + amount)
+                    }
                 }
             }
         }
@@ -47,17 +50,18 @@ function App (){
                 date = new Date().getTime();
                 if(date > nextDate){
                     setDisplayTime((prev) => {
-                        if(prev <=0 && !breakTracker){
-                            playBeep();
+                        if(prev <= 0 && !breakTracker){
+                            // playBeep();
                             breakTracker = true
                             setOnBreak(true);
                             return breakTime;
-                        }else if( prev <=0 && breakTracker){
-                            playBeep();
+                        }else if( prev <= 0 && breakTracker){
+                            // playBeep();
                             breakTracker = false
                             setOnBreak(false);
                             return sessionTime;
                         }
+                        if((prev - 1) == 0 ){playBeep()}
                         return prev - 1;
                     })
                     nextDate += second;
@@ -75,12 +79,18 @@ function App (){
         setBreakTime(5*60);
         setSessionTime(25*60);
         setDisplayTime(25*60);
-        setTimerOn(false);
+        setOnBreak(false);
+        if(timerOn){timerEngine()};
+        stopBeep();
     }
 
     const playBeep = () => {
-        beepSound.currentTime = 0;
-        beepSound.play();
+        audioRef.current.play();
+    }
+
+    const stopBeep =() => {
+        audioRef.current.pause();
+        audioRef.current.currentTime = 0;
     }
 
     return(
@@ -134,9 +144,9 @@ function App (){
                         </div>
                     </div>
                 </div>
+                <audio id="beep" preload="auto" src="./beepSound.wav" ref={audioRef}></audio>
             </div>
         </div>
-
     )
 }
 
