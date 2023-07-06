@@ -18,7 +18,7 @@ html {
     align-items: center;
     justify-content: center;
     background-color: #b1bdd5;
-    width: 100rem;
+    width: 100vw;
     height: 100vh;
 }
 
@@ -37,4 +37,57 @@ html {
 
 .main .container #canva{
     position: absolute;
+}
+
+.main .container #title {
+    text-align: center;
+    font-size: 2.5em;
+    position: absolute;
+    top: 3rem;
+    left: 45rem;
+}
+
+#tooltip {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    text-align: center;
+    width: 20rem;
+    height: 7rem;
+    padding: 0.3rem;
+    font-size: 2rem;
+    background: #b1bdd5;
+    box-shadow: 0.1rem 0.1rem 1rem;
+    border-radius: 2%;
+    pointer-events: none;
+}
+
+.overlay {
+    position: absolute;
+    background: #fff;
+    pointer-events: none;
+}
+
+#y-axis path {
+    stroke: black;
+    stroke-width: 1;
+    fill: none;
+}
+
+#x-axis path {
+    stroke: black;
+    stroke-width: 1;
+    fill: none;
+}
+
+.info {
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+@media only screen and (max-width: 1000px) {
+    .main{
+        width: 100rem;
+    }
 }

@@ -10,13 +10,13 @@ const barWidth = width/275;
 // Create elements
 const toolTip = d3.select('#canva')
                     .append('div')
-                    .attr('id', 'toolTip')
-                    .style('opacity', 0);
+                    .attr('id', 'tooltip')
+                    .style('opacity', '0');
 
 const overlay = d3.select('#canva')
                     .append('div')
                     .attr('class', 'overlay')
-                    .style('opacity', 0);
+                    .style('opacity', '0');
 
 
 const svgContainer = d3.select('#canva')
@@ -28,6 +28,20 @@ const svgContainer = d3.select('#canva')
 d3.json(url)
     .then(data => {
         let years = data.data.map(function(item){
+
+            svgContainer
+                .append('text')
+                .attr('transform', 'rotate(-90)')
+                .attr('x', -200)
+                .attr('y', 80)
+                .text('Gross Domestic Product');
+
+            svgContainer
+                .append('text')
+                .attr('x', width / 2 + 120)
+                .attr('y', height + 50)
+                .text('More Information: http://www.bea.gov/national/pdf/nipaguid.pdf')
+                .attr('class', 'info');
 
             let quarter;
             let temp = item[0].substring(5,7)
@@ -134,7 +148,7 @@ d3.json(url)
                         years[i] + 
                         '<br>' +
                         '$ ' +
-                        gdp[i] +
+                        gdp[i].toFixed(1).replace(/(\d)(?=(\d{3})+\.)/g, '$1,') +
                         'Billion'
                     )
                     .attr('data-date', data.data[i][0])
@@ -142,8 +156,8 @@ d3.json(url)
                     .attr('top', height - 100 + 'px')
                     .style('transform', 'translateX(60px)')                    
             })
-            .on('mouseon', function(){
+            .on('mouseout', function(){
                 toolTip.transition().duration(200).style('opacity', 0);
                 overlay.transition().duration(200).style('opacity', 0);
             });
-    })
+})
