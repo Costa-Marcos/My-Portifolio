@@ -2,3 +2,10 @@
     min-height: 15rem;
     background-color: white;
 }
+
+
+@media only screen and (max-width: 768px) {
+    nav a p{
+        font-size: 0;
+    }
+}
