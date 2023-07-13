@@ -14,7 +14,7 @@ const margin = {
 const width = window.innerWidth * 0.9 - margin.left - margin.right;
 const height =  window.innerHeight * 0.9 - margin.bottom - margin.top;
 
-let x = d3.scaleLinear().range([0, width]);
+let x = d3.scaleLinear().range([0, width - 50]);
 let y = d3.scaleTime().range([0, height]);
 
 let xAxis = d3.axisBottom(x).tickFormat(d3.format('d'));
@@ -44,7 +44,7 @@ let svgContainer = d3
     .attr('height', height + margin.top + margin.bottom)
     .attr('class', 'graph')
     .append('g')
-    .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
+    .attr('transform', 'translate(' + (margin.left + margin.right) + ',' + margin.top + ')');
     
 const url = 'https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/master/cyclist-data.json';
 
@@ -131,7 +131,7 @@ d3.json(url)
         .style('stroke', 'black') // Set the border color to black
         .style('stroke-width', '1px') // Set the border width to 1 pixel
         .on('mouseover', function (event, d) {
-            div.style('opacity', 0.9);
+            div.style('opacity', 0.99);
             div.attr('data-year', d.Year);
             div
                 .html(
@@ -176,10 +176,38 @@ d3.json(url)
             .selectAll('#legend')
             .data(['#842626', '#49985f'])
             .enter()
+            .append('g')
+            .attr('class', 'legend-label')
+            .attr('transform', function(d,i){
+                console.log(d,i)
+                return 'translate(0,' + (height/2 - i * 33) + ')';
+            })
+        
+        legend
+            .append('rect')
+            .attr('x', width - 30)
+            .style('width', 30)
+            .style('height', 30)
+            .style('fill', function(d){
+                return d
+            })
+            .style('stroke', 'black')
+        
+        legend
+            .append('text')
+            .attr('x', width - 35)
+            .attr('y', 19)
+            .text(function(d){
+                if (d == '#842626' ) {
+                    return 'Riders with doping allegations';
+                } else {
+                    return 'No doping allegations';
+                }
+            })
+            .style('text-anchor', 'end')
             ;
 
-        legend
-            .append
+
 
 })
 .catch(err => console.log(err));
