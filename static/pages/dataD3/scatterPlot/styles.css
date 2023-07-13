@@ -1,0 +1,27 @@
+*{
+  margin: 0;
+}
+
+#anchor {
+    background-color: #acb7c0;
+}
+
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+div.tooltip {
+  position: absolute;
+
+  padding: 15px;
+  font: 16px sans-serif;
+  color: #fcf2f2;
+  background: #091924;
+  border: 0px;
+  border-radius: 8px;
+  pointer-events: none;
+}
