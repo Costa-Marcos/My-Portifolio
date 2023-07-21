@@ -151,10 +151,10 @@ class App extends React.Component{
             // this.setState({selectedInput2: ['Ordem crescente']})
         }else if(value == 'tecnologias'){
             this.setState({input2List: technologiesList});
-            // this.setState({selectedInput2: ['React.js']})
+            this.setState({selectedInput2: ['React.js']});
         }else if(value == 'categorias'){
             this.setState({input2List: categoriesList});
-            // this.setState({selectedInput2: ['Projeto real']})
+            this.setState({selectedInput2: ['Projeto real']})
         }
     }
 
@@ -162,7 +162,6 @@ class App extends React.Component{
         const selectedOptions = Array.from(event.target.options)
             .filter(option => option.selected)
             .map(option => option.value);
-        console.log(this.state.selectedInput2, selectedOptions)
         this.setState({selectedInput2: selectedOptions});
     }
 
@@ -185,8 +184,9 @@ class App extends React.Component{
                                 aria-label=".form-select-lg example" 
                                 multiple={this.state.selectedInput1 == 'tecnologias'? true : this.state.selectedInput1 == 'categorias' ? true: false} 
                                 size={this.state.selectedInput1 == 'tecnologias'? 4 : this.state.selectedInput1 == 'categorias' ? 4 : 1} 
-                                value={console.log(this)}
-                                    // this.state.selectedInput2[0] : this.state.selectedInput2} 
+                                value={
+                                    this.state.selectedInput1 == 'nome' || this.state.selectedInput1 == 'relevancia' ? this.state.selectedInput2[0] : this.state.selectedInput2
+                                }
                                 onChange= {this.handleSelect2}>
                                 {this.state.input2List.map((item, index) =>{
                                     return(<option value={item} key={index}>{item}</option>)
@@ -264,22 +264,40 @@ class Project extends React.Component{
                     }
                 }
             }else if(this.props.whatFilter == 'tecnologias'){
-                console.log(this.props.whatFilter, this.props.howToFilter)
-                let projectsRanked = sortedArray(projects.map( item => {
-                    return [item.technologies, item.ID]
-                }));
-                // console.log(projectsRanked)
-                // if(this.props.howToFilter == 'Ordem crescente'){
-                //     for(let i = 0; i < projectsRanked.length; i++ ){
-                //         const foundProject = projects.find(item => item.ID == projectsRanked[i][1])
-                //         if(foundProject){projectsToRender.push(foundProject)}
-                //     }
-                // }else if(this.props.howToFilter == 'Ordem decrescente'){
-                //     for(let i = 0; i < projectsRanked.length; i++ ){
-                //         const foundProject = projects.find(item => item.ID == projectsRanked[projectsRanked.length - i - 1][1])
-                //         if(foundProject){projectsToRender.push(foundProject)}
-                //     }
-                // }
+                projects.map(item => {
+                    let itemsChecked = item.technologies.map(element => {
+                        let output = 0;
+                        for(let i = 0; i < this.props.howToFilter.length; i++ ){
+                            if(element == this.props.howToFilter[i]){
+                                ++output
+                            }
+                        }
+                        return output
+
+                    })
+                    if(eval(itemsChecked.join(' + '))){
+                        projectsToRender.push(item)
+                    }
+
+                })
+            }
+            else if(this.props.whatFilter == 'categorias'){
+                projects.map(item => {
+                    let itemsChecked = item.categories.map(element => {
+                        let output = 0;
+                        for(let i = 0; i < this.props.howToFilter.length; i++ ){
+                            if(element == this.props.howToFilter[i]){
+                                ++output
+                            }
+                        }
+                        return output
+
+                    })
+                    if(eval(itemsChecked.join(' + '))){
+                        projectsToRender.push(item)
+                    }
+
+                })
             }
             this.setState({projects: projectsToRender})
 
@@ -290,6 +308,7 @@ class Project extends React.Component{
     render(){
 
         const items = this.state.projects.map(item => {
+
             return(
                 <div className="card m-2 w-98" key={item.ID}>
                     <div className="row g-0">
