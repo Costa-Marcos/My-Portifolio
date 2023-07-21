@@ -1,0 +1,29 @@
+
+body {
+    height: 100vh;
+}
+
+
+.axis-label{
+    font-size: 20px;
+}
+
+.map .cell{
+    stroke-width: 0;
+}
+
+.map .cell:hover {
+    stroke: #191826;
+    stroke-width: 2;
+}
+
+#tooltip{
+    text-align: center;
+    line-height: 25px;
+    padding: 10px;
+    background-color: #191826;
+    border-radius: 2%;
+    color: #f6efe6;
+    position: absolute;
+    z-index: 999;
+}
