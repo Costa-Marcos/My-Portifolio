@@ -148,7 +148,7 @@ class App extends React.Component{
         const value = event.target.value;
         if(value == 'relevancia' || value == 'nome'){
             this.setState({input2List: ['Ordem crescente', 'Ordem decrescente']});
-            // this.setState({selectedInput2: ['Ordem crescente']})
+            this.setState({selectedInput2: ['Ordem crescente']})
         }else if(value == 'tecnologias'){
             this.setState({input2List: technologiesList});
             this.setState({selectedInput2: ['React.js']});
