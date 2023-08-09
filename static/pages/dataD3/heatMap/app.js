@@ -9,8 +9,8 @@ const margin = {
     left: 100
 }
 
-const width = 1200;
-const height = 800;
+const width = 1000;
+const height = 700;
 
 // Create the project container
 let container = d3
@@ -18,7 +18,9 @@ let container = d3
     .append('div')
     .attr('id', 'anchor')
     .attr('width', width)
-    .attr('heigth', height);
+    .attr('heigth', height)
+    .style('display', 'flex')
+    .style('justify-content', 'center');
 
 // Create the tooltip
 let tooltip = d3
