@@ -42,7 +42,7 @@ img, picture, svg, video{
         transform-origin: bottom left;
     }
 }
-
+/* 
 #falling-star {
     position: absolute;
     background-color: #ecebeb;
@@ -120,7 +120,7 @@ img, picture, svg, video{
     100%{
         filter: brightness(70%);
     }
-}
+} */
 
 /* #endregion */
 
