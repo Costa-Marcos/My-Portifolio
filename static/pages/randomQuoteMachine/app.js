@@ -6,11 +6,18 @@ const getRandom = () => {
 
 }
 
+function fixAuthorName(txt){
+
+    let arr = txt.split('');
+    arr = arr.splice(0, arr.length - 10);
+    return arr.join('');
+}
+
 function App () {
 
     const [quotes, setQuotes] = React.useState([]);
     const [randomQuote, setaRandomQuote] = React.useState('');
-    const [colors, setColor] = React.useState("fff");
+    const [colors, setColor] = React.useState("#fff");
 
     React.useEffect(() =>{
         async function fetchData (){
@@ -21,6 +28,7 @@ function App () {
             setQuotes(data);
             const randomIndex = Math.floor(Math.random() * data.length)
             setaRandomQuote(data[randomIndex])
+
         }
         fetchData();
     },[])
@@ -32,8 +40,10 @@ function App () {
         const randomIndex = Math.floor(Math.random() * quotes.length);
         setaRandomQuote(quotes[randomIndex]);
         setColor(colors[randomColorIndex]);
+        console.log(randomQuote.author)
     }
     const txtQuote = `"${randomQuote.text}", ${randomQuote.author}`
+    
     return (
         <div style={{backgroundColor: colors}} className='body-container'>
             <div className="card-container">
@@ -43,7 +53,7 @@ function App () {
                     </div>
                     <div style={{borderBottom: `solid 0.2rem ${colors}`}}>{randomQuote? (
                         <>
-                            <h3 style={{fontSize: '2.2rem'}} id="author">{randomQuote.author || 'No author'}</h3>
+                            <h3 style={{fontSize: '2.2rem'}} id="author">{fixAuthorName(randomQuote.author) || 'No author'}</h3>
                             <p  style={{fontSize: '2rem'}} id="text">{`"${randomQuote.text}"`}</p>
                         </>
                         ):(<h2>Loading</h2>)}
@@ -55,7 +65,7 @@ function App () {
                         <div className="btn-socials">
                             <a id="tweet-quote" href={"https://twitter.com/intent/tweet?hastags=quote&text=" + encodeURIComponent(txtQuote)}
                             className="btn-tweet" target='blank'>
-                                <i class="fa fa-twitter fa-2xl"></i>
+                                <i className="fa fa-twitter fa-2xl"></i>
                             </a>
                             <a href={'https://www.tumblr.com/widgets/share/tool?posttype=quote&tag=quotes' + encodeURIComponent(randomQuote.author) + "&content=" + encodeURIComponent(randomQuote.text) + "&canonicalURl=https%3A%2F%2Fwww.tumblr.com%2FbuttonshareSource=tumblr_share"} target='blank' className="btn-tweet">
                                 <i className="fa fa-tumblr fa-2xl"></i>
@@ -68,4 +78,6 @@ function App () {
     );
 }
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const container = document.getElementById('root');
+const root = ReactDOM.createRoot(container);
+root.render(<App />);
