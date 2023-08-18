@@ -1,4 +1,3 @@
-
 function App (){
 
     const [breakTime, setBreakTime] = React.useState(5*60);
@@ -97,35 +96,35 @@ function App (){
         <div className = 'container h-100'>
             <div className='row'>
                 <div className="container position-absolute top-50 start-50 translate-middle col-lg-4 col-md-6 col-sm-10 col-12">
-                    <div className='text-center mb-5 display-1'>Pomodoro Timer</div>
+                    <div className='text-center mb-5 display-2'>Pomodoro Timer</div>
                     <div className='column mt-5'>
-                        <div className='d-flex flex-row my-2'>
-                            <div className="d-flex flex-column col-6 border border-3 border-primary-subtle rounded py-3">
-                                <div id='break-label' className='text-center'>Break Length</div>
-                                <div className="d-flex flex-row mx-auto mt-2">
-                                    <button id='break-increment' onClick={() => changeTimer(60, 'break')}>
+                        <div className='d-flex flex-row my-2 border border-3 border-danger rounded' style={{backgroundColor:'#ebe2e2'}}>
+                            <div className="d-flex flex-column col-6 py-3">
+                                <div id='break-label' className='text-center fs-4'>Break Length</div>
+                                <div className="d-flex flex-row mx-auto mt-2 pb-2">
+                                    <button id='break-increment' onClick={() => changeTimer(60, 'break')} className='btn btn-dark'>
                                         <i className="fa fa-arrow-up fa-2x"></i>
                                     </button>
-                                    <div id='break-length' className='mx-2'>{formatTime(breakTime, false)}</div>
-                                    <button id='break-decrement' onClick={() => changeTimer(-60, 'break')}>
+                                    <div id='break-length' className='mx-2 fs-5 px-2 my-auto'>{formatTime(breakTime, false)}</div>
+                                    <button id='break-decrement' onClick={() => changeTimer(-60, 'break')} className='btn btn-dark'>
                                         <i className="fa fa-arrow-down fa-2x"></i>
                                     </button>
                                 </div>
                             </div>
-                            <div className="d-flex flex-column col-6 border border-3 border-primary-subtle rounded py-3">
-                                <div id='session-label'className='text-center'>Session Length</div>
-                                <div className="d-flex flex-row mx-auto mt-2">
-                                    <button id='session-increment' onClick={() => changeTimer(60, 'session')}>
+                            <div className="d-flex flex-column col-6 py-3">
+                                <div id='session-label'className='text-center fs-4'>Session Length</div>
+                                <div className="d-flex flex-row mx-auto mt-2 pb-2">
+                                    <button id='session-increment' onClick={() => changeTimer(60, 'session')} className='btn btn-dark'>
                                         <i className="fa fa-arrow-up fa-2x"></i>
                                     </button>
-                                    <div id='session-length' className='mx-2'>{formatTime(sessionTime, false)}</div>
-                                    <button id='session-decrement'  onClick={() => changeTimer(-60, 'session')}>
+                                    <div id='session-length' className='mx-2 fs-5 px-2 my-auto'>{formatTime(sessionTime, false)}</div>
+                                    <button id='session-decrement'  onClick={() => changeTimer(-60, 'session')} className='btn btn-dark'>
                                         <i className="fa fa-arrow-down fa-2x"></i>
                                     </button>
                                 </div>
                             </div>
                         </div>
-                        <div className='mx-auto text-center my-4 border border-3 border-primary-subtle rounded py-3 pb-5'>
+                        <div className='mx-auto text-center my-4 border border-3 border-danger rounded py-3 pb-5' style={{backgroundColor:'#ebe2e2'}}>
                             <div>
                                 <div>
                                     <div id='timer-label' className = 'display-4'>{onBreak? 'Break': 'Session'}</div>
@@ -133,11 +132,11 @@ function App (){
                                 </div>
                             </div>
                             <div>
-                                <button id='start_stop' onClick={timerEngine}>
+                                <button id='start_stop' onClick={timerEngine} className='btn btn-success border border-2 border-secondary'>
                                     <i className="fa fa-play fa-2x"></i>
                                     <i className="fa fa-pause fa-2x"></i>
                                 </button>
-                                <button id='reset' onClick={resetTimer}>
+                                <button id='reset' onClick={resetTimer} className='btn btn-danger border border-2 border-secondary ms-2'>
                                     <i className="fa fa-refresh fa-2x"></i>
                                 </button>
                             </div>
